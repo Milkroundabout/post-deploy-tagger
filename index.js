@@ -2,8 +2,8 @@ var express = require('express');
 var app = express();
 var GitHubApi = require("github");
 
-app.get('/', function (req, res) {
-  if (process.env.APP_ACCESS_TOKEN === req.params.token) {
+app.get('/tag', function (req, res) {
+  if (process.env.APP_ACCESS_TOKEN === req.query.token) {
     var github = new GitHubApi({
       // required 
       version: "3.0.0",
@@ -24,8 +24,8 @@ app.get('/', function (req, res) {
     github.releases.createRelease({
       owner: process.env.REPO_OWNER,
       repo: process.env.REPO_NAME,
-      tag_name: "TestTag",
-      target_commitish: "3d9e9c311e55e0d7fab567ee4751ea9d02b31d56"
+      tag_name: req.query.tag + '_' + new Date().toISOString().replace(/[:.]/g,'_'),
+      target_commitish: req.query.commit
     }, function(err, response) {
       res.send(JSON.stringify(response));
     });
