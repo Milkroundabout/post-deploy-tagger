@@ -22,8 +22,8 @@ app.get('/tag', function (req, res) {
       token: process.env.GITHUB_ACCESS_TOKEN
     });
     github.releases.createRelease({
-      owner: process.env.REPO_OWNER,
-      repo: process.env.REPO_NAME,
+      owner: req.query.owner,
+      repo: req.query.repo,
       tag_name: req.query.tag + '_' + new Date().toISOString().replace(/[:.]/g,'_'),
       target_commitish: req.query.commit
     }, function(err, response) {
@@ -34,6 +34,6 @@ app.get('/tag', function (req, res) {
   }
 });
 
-app.listen(3000, function () {
+app.listen(process.env.PORT || 3000, function () {
   console.log('Example app listening on port 3000!');
 });
