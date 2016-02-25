@@ -1,0 +1,15 @@
+{
+  "name": "post-deploy-tag",
+  "version": "1.0.0",
+  "description": "Git tags a github repo when prompted by a post release hook",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Simon Fry",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4",
+    "github": "^0.2.4"
+  }
+}
