@@ -1,4 +1,2 @@
 export GITHUB_ACCESS_TOKEN=
 export APP_ACCESS_TOKEN=
-export REPO_OWNER=
-export REPO_NAME=

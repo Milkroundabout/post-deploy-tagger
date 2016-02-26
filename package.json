@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Git tags a github repo when prompted by a post release hook",
   "main": "index.js",
+  "engines": {
+    "node": "4.3.1",
+    "npm": "2.14.12"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
