@@ -11,7 +11,7 @@ You'll need two env variables:
 
 ## How to use
 
-When this is up and running send requests to `/tag` with the following parameters:
+When this is up and running send a POST to `/tag` with the following parameters:
 
 - `token` - The `APP_ACCESS_TOKEN` from above
 - `owner` - The owner of the git repo on github

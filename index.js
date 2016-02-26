@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var GitHubApi = require("github");
 
-app.get('/tag', function (req, res) {
+app.post('/tag', function (req, res) {
   if (process.env.APP_ACCESS_TOKEN === req.query.token) {
     var github = new GitHubApi({
       // required 
